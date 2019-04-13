@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./css/App.css";
 import Undone from "./Undone";
 import Done from "./Done";
-import FormDialog from "./FormDialog";
+import CreateForm from "./CreateForm";
+import "./css/App.css";
 
 export default class App extends Component {
   constructor() {
@@ -18,77 +18,109 @@ export default class App extends Component {
       //   content: "2限",
       //   done: false
       // },
-      // {
-      //   id: 3,
-      //   content: "3限",
-      //   done: false
-      // },
-      // {
-      //   id: 4,
-      //   content: "4限",
-      //   done: false
-      // }
     ];
-    const doneTodos = []
-
+    const doneTodos = [
+      // {
+      // id: 3,
+      // content: "2限",
+      // done: true
+      // }
+    ]
     const undoneLength = undoneTodos.length;
     const doneLength = doneTodos.length;
-    // const modalMessage = "";
 
     this.state = {
       undoneTodos: undoneTodos,
       undoneLength: undoneLength,
       doneTodos: doneTodos,
       doneLength: doneLength,
-      show: false
-      // modalMessage:modalMessage
+      createShow: false,
     };
   }
 
-  handleOpen() {
-    this.setState({ show: true });
-    // console.log(show);
-
+  createOpen() {
+    this.setState({ createShow: true });
   }
 
-  handleClose() {
-    this.setState({ show: false });
+  createClose() {
+    this.setState({ createShow: false });
+  }
+
+  plusFirstUndoneTodo() {
+    const content = document.getElementById("content").value;
+    const undoneTodos = this.state.undoneTodos.slice();
+
+    undoneTodos.unshift({
+      id: 1,
+      content: content,
+      done: false
+    });
+    const undoneLength = undoneTodos.length;
+
+    this.setState({ undoneTodos: undoneTodos });
+    this.setState({ undoneLength: undoneLength });
+    this.createClose();
+  }
+
+  plusMaxUndoneIdTodo() {
+    const content = document.getElementById("content").value;
+    const undoneTodos = this.state.undoneTodos.slice();
+    const undoneIds = undoneTodos.map(undoneTodo => undoneTodo.id);
+    const maxUndoneId = Math.max.apply(null, undoneIds);
+
+    undoneTodos.unshift({
+      id: maxUndoneId + 1,
+      content: content,
+      done: false
+    });
+    const undoneLength = undoneTodos.length;
+
+    this.setState({ undoneTodos: undoneTodos });
+    this.setState({ undoneLength: undoneLength });
+    this.createClose();
+  }
+
+  plusMaxDoneIdTodo() {
+    const content = document.getElementById("content").value;
+    const undoneTodos = this.state.undoneTodos.slice();
+    const doneTodos = this.state.doneTodos.slice();
+    const doneIds = doneTodos.map(doneTodo => doneTodo.id);
+    const maxDoneId = Math.max.apply(null, doneIds);
+
+    undoneTodos.unshift({
+      id: maxDoneId + 1,
+      content: content,
+      done: false
+    });
+    const undoneLength = undoneTodos.length;
+
+    this.setState({ undoneTodos: undoneTodos });
+    this.setState({ undoneLength: undoneLength });
+    this.createClose();
   }
 
   createTodo(event) {
     event.preventDefault();
 
-    const content = document.getElementById("content").value;
     const undoneTodos = this.state.undoneTodos.slice();
-    const lastUndoneTodo = undoneTodos.slice(-1)[0];
+    const undoneLength = undoneTodos.length;
+    const undoneIds = undoneTodos.map(undoneTodo => undoneTodo.id);
+    const maxUndoneId = Math.max.apply(null, undoneIds);
+    const doneTodos = this.state.doneTodos.slice();
+    const doneLength = doneTodos.length;
+    const doneIds = doneTodos.map(doneTodo => doneTodo.id);
+    const maxDoneId = Math.max.apply(null, doneIds);
 
-    if (lastUndoneTodo) {
-      console.log("lastUndoneTodoあります！");
-      
-      undoneTodos.push({
-        id: lastUndoneTodo.id + 1,
-        content: content,
-        done: false
-      });
-      console.log(undoneTodos);
-      
-      const undoneLength = undoneTodos.length;
-      this.setState({ undoneTodos: undoneTodos });
-      this.setState({ undoneLength: undoneLength });
-      this.handleClose();
-    } else {
-      console.log("lastUndoneTodoないです！");
-      undoneTodos.push({
-        id: 1,
-        content: content,
-        done: false
-      }
-      );
-      console.log(undoneTodos);
-
-      this.setState({ undoneTodos: undoneTodos });
-      this.setState({ undoneLength: 1 });
-      this.handleClose();
+    if ((undoneLength !== 0 && doneLength !== 0) && (maxUndoneId > maxDoneId)) {
+      this.plusMaxUndoneIdTodo();
+    } else if ((undoneLength !== 0 && doneLength !== 0) && (maxUndoneId < maxDoneId)) {
+      this.plusMaxDoneIdTodo();
+    } else if (doneLength === 0 && undoneLength === 0) {
+      this.plusFirstUndoneTodo();
+    } else if (doneLength === 0) {
+      this.plusMaxUndoneIdTodo();
+    } else if (undoneLength === 0) {
+      this.plusMaxDoneIdTodo();
     }
   }
 
@@ -169,7 +201,7 @@ export default class App extends Component {
         <Undone
           undoneTodos={this.state.undoneTodos}
           undoneLength={this.state.undoneLength}
-          handleOpen={this.handleOpen.bind(this)}
+          createOpen={this.createOpen.bind(this)}
           switchDone={this.switchDone.bind(this)}
           deleteTodo={this.deleteTodo.bind(this)}
         />
@@ -179,10 +211,10 @@ export default class App extends Component {
           switchDone={this.switchDone.bind(this)}
           deleteTodo={this.deleteTodo.bind(this)}
         />
-        <FormDialog
-          show={this.state.show}
-          handleOpen={this.handleOpen.bind(this)}
-          handleClose={this.handleClose.bind(this)}
+        <CreateForm
+          createShow={this.state.createShow}
+          createOpen={this.createOpen.bind(this)}
+          createClose={this.createClose.bind(this)}
           createTodo={this.createTodo.bind(this)}
         />
       </div>

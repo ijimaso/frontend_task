@@ -1,14 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import Dialog from "@material-ui/core/Dialog";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import "./css/FormDialog.css";
 
-export default class FormDialog extends Component {
-  render() {
+const CreateForm = (props) => {
     return (
       <div className="formdialog">
-        <Dialog open={this.props.show} onClose={this.props.handleClose}>
+        <Dialog open={props.createShow} onClose={props.createClose}>
           <h1>作成するタスクを入力してください．</h1>
           <TextField 
             multiline
@@ -17,11 +16,12 @@ export default class FormDialog extends Component {
             margin="normal"
             id="content"
           />
-          <Button variant="contained" color="primary" onClick={(event) => this.props.createTodo(event)} size="small">
-            Create
+          <Button variant="contained" color="primary" onClick={(event) => props.createTodo(event)} size="small">
+            OK!!
           </Button>
         </Dialog>
       </div>
     );
-  }
 }
+
+export default CreateForm;
