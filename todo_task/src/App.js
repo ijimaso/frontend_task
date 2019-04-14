@@ -66,7 +66,7 @@ export default class App extends Component {
     const content = document.getElementById("content").value;
     const undoneTodos = this.state.undoneTodos.slice();
     const undoneIds = undoneTodos.map(undoneTodo => undoneTodo.id);
-    const maxUndoneId = Math.max.apply(null, undoneIds);
+    const maxUndoneId = Math.max(...undoneIds);
 
     undoneTodos.unshift({
       id: maxUndoneId + 1,
@@ -85,7 +85,7 @@ export default class App extends Component {
     const undoneTodos = this.state.undoneTodos.slice();
     const doneTodos = this.state.doneTodos.slice();
     const doneIds = doneTodos.map(doneTodo => doneTodo.id);
-    const maxDoneId = Math.max.apply(null, doneIds);
+    const maxDoneId = Math.max(...doneIds);
 
     undoneTodos.unshift({
       id: maxDoneId + 1,
@@ -105,11 +105,12 @@ export default class App extends Component {
     const undoneTodos = this.state.undoneTodos.slice();
     const undoneLength = undoneTodos.length;
     const undoneIds = undoneTodos.map(undoneTodo => undoneTodo.id);
-    const maxUndoneId = Math.max.apply(null, undoneIds);
+    const maxUndoneId = Math.max(...undoneIds);
+
     const doneTodos = this.state.doneTodos.slice();
     const doneLength = doneTodos.length;
     const doneIds = doneTodos.map(doneTodo => doneTodo.id);
-    const maxDoneId = Math.max.apply(null, doneIds);
+    const maxDoneId = Math.max(...doneIds);
 
     if ((undoneLength !== 0 && doneLength !== 0) && (maxUndoneId > maxDoneId)) {
       this.plusMaxUndoneIdTodo();
