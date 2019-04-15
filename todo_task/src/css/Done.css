@@ -1,6 +1,5 @@
 .done{
     display: inline-block;
-    width: 20rem;
+    width: 75%;
     height: 20rem;
-    border:5px solid blue;
 }

@@ -1,9 +1,21 @@
 .todo{
-    width: 18rem;
+    width: 100%;
     height: 10rem;
     font-size: 1.5rem;
 }
 
-.deleteicon{
-    background-color: #fff;
+#checkicon{
+    margin-right: 3rem;
+}
+
+#undone{
+    display: block;
+    width: 100%;
+    color: black;
+}
+
+#done{
+    display: block;
+    width: 100%;
+    color: #E0E0E0;
 }

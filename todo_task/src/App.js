@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Grid from "@material-ui/core/Grid";
 import Undone from "./Undone";
 import Done from "./Done";
 import CreateForm from "./CreateForm";
@@ -8,23 +9,23 @@ export default class App extends Component {
   constructor() {
     super();
     const undoneTodos = [
-      // {
-      //   id: 1,
-      //   content: "1限",
-      //   done: false
-      // },
-      // {
-      //   id: 2,
-      //   content: "2限",
-      //   done: false
-      // },
+      {
+        id: 1,
+        content: "1限",
+        done: false
+      },
+      {
+        id: 2,
+        content: "2限",
+        done: false
+      },
     ];
     const doneTodos = [
-      // {
-      // id: 3,
-      // content: "2限",
-      // done: true
-      // }
+      {
+        id: 3,
+        content: "2限",
+        done: true
+      }
     ]
     const undoneLength = undoneTodos.length;
     const doneLength = doneTodos.length;
@@ -34,54 +35,90 @@ export default class App extends Component {
       undoneLength: undoneLength,
       doneTodos: doneTodos,
       doneLength: doneLength,
-      createShow: false,
+      createShow: false
     };
   }
 
-  createOpen() {
+  /**
+   *タスク作成フォームを開く
+   *
+   * @memberof App
+   */
+  createOpen = () => {
     this.setState({ createShow: true });
   }
 
-  createClose() {
+  /**
+   *タスク表示フォームを閉じる
+   *
+   * @memberof App
+   */
+  createClose = () => {
     this.setState({ createShow: false });
   }
 
-  plusFirstUndoneTodo() {
+  /**
+   *Idが1のタスクを作成する
+   *
+   * @memberof App
+   */
+  plusFirstUndoneTodo = () => {
     const content = document.getElementById("content").value;
-    const undoneTodos = this.state.undoneTodos.slice();
+    if (content === "") {
+      alert("タスク内容を入力してください．")
+    } else {
+      const undoneTodos = this.state.undoneTodos.slice();
 
-    undoneTodos.unshift({
-      id: 1,
-      content: content,
-      done: false
-    });
-    const undoneLength = undoneTodos.length;
+      undoneTodos.unshift({
+        id: 1,
+        content: content,
+        done: false
+      });
+      const undoneLength = undoneTodos.length;
 
-    this.setState({ undoneTodos: undoneTodos });
-    this.setState({ undoneLength: undoneLength });
-    this.createClose();
+      this.setState({ undoneTodos: undoneTodos });
+      this.setState({ undoneLength: undoneLength });
+      this.createClose();
+    }
   }
 
-  plusMaxUndoneIdTodo() {
+  /**
+   *IDの最大値が「未完了」のタスクであるとき，次のIDのタスクを作成する
+   *
+   * @memberof App
+   */
+  plusMaxUndoneIdTodo = () => {
     const content = document.getElementById("content").value;
-    const undoneTodos = this.state.undoneTodos.slice();
-    const undoneIds = undoneTodos.map(undoneTodo => undoneTodo.id);
-    const maxUndoneId = Math.max(...undoneIds);
+    if (content === "") {
+      alert("タスク内容を入力してください．")
+    } else {
+      const undoneTodos = this.state.undoneTodos.slice();
+      const undoneIds = undoneTodos.map(undoneTodo => undoneTodo.id);
+      const maxUndoneId = Math.max(...undoneIds);
 
-    undoneTodos.unshift({
-      id: maxUndoneId + 1,
-      content: content,
-      done: false
-    });
-    const undoneLength = undoneTodos.length;
+      undoneTodos.unshift({
+        id: maxUndoneId + 1,
+        content: content,
+        done: false
+      });
+      const undoneLength = undoneTodos.length;
 
-    this.setState({ undoneTodos: undoneTodos });
-    this.setState({ undoneLength: undoneLength });
-    this.createClose();
+      this.setState({ undoneTodos: undoneTodos });
+      this.setState({ undoneLength: undoneLength });
+      this.createClose();
+    }
   }
 
-  plusMaxDoneIdTodo() {
+  /**
+   *IDの最大値が「完了」のタスクであるとき，次のIDのタスクを作成する
+   *
+   * @memberof App
+   */
+  plusMaxDoneIdTodo = () => {
     const content = document.getElementById("content").value;
+    if (content === "") {
+      alert("タスク内容を入力してください．")
+    } else {
     const undoneTodos = this.state.undoneTodos.slice();
     const doneTodos = this.state.doneTodos.slice();
     const doneIds = doneTodos.map(doneTodo => doneTodo.id);
@@ -97,9 +134,16 @@ export default class App extends Component {
     this.setState({ undoneTodos: undoneTodos });
     this.setState({ undoneLength: undoneLength });
     this.createClose();
+    }
   }
 
-  createTodo(event) {
+  /**
+   *未完了/完了のタスクの条件によって，実際にタスクを作成
+   *
+   * @memberof App
+   * @param {Object} event イベント
+   */
+  createTodo = (event) => {
     event.preventDefault();
 
     const undoneTodos = this.state.undoneTodos.slice();
@@ -125,7 +169,13 @@ export default class App extends Component {
     }
   }
 
-  switchDone(clickedTodo) {
+  /**
+   *完了/未完了を切り替える
+   *
+   * @memberof App
+   * @param {Object} clickedTodo クリックされたタスク
+   */
+  switchDone = (clickedTodo) => {
     const undoneTodos = this.state.undoneTodos.slice();
     const doneTodos = this.state.doneTodos.slice();
 
@@ -172,7 +222,13 @@ export default class App extends Component {
     }
   }
 
-  deleteTodo(clickedTodo) {
+  /**
+   *タスクを削除する
+   *
+   * @memberof App
+   * @param {Object} clickedTodo クリックされたタスク
+   */
+  deleteTodo = (clickedTodo) => {
     const undoneTodos = this.state.undoneTodos.slice();
     const doneTodos = this.state.doneTodos.slice();
 
@@ -198,25 +254,31 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Todo Task</h1>
-        <Undone
-          undoneTodos={this.state.undoneTodos}
-          undoneLength={this.state.undoneLength}
-          createOpen={this.createOpen.bind(this)}
-          switchDone={this.switchDone.bind(this)}
-          deleteTodo={this.deleteTodo.bind(this)}
-        />
-        <Done
-          doneTodos={this.state.doneTodos}
-          doneLength={this.state.doneLength}
-          switchDone={this.switchDone.bind(this)}
-          deleteTodo={this.deleteTodo.bind(this)}
-        />
+        <h1 id="todotitle">タスク管理アプリ</h1>
+        <Grid container>
+          <Grid item md={6} xs={12}>
+            <Undone
+              undoneTodos={this.state.undoneTodos}
+              undoneLength={this.state.undoneLength}
+              createOpen={this.createOpen}
+              switchDone={this.switchDone}
+              deleteTodo={this.deleteTodo}
+            />
+          </Grid>
+          <Grid item md={6} xs={12}>
+            <Done
+              doneTodos={this.state.doneTodos}
+              doneLength={this.state.doneLength}
+              switchDone={this.switchDone}
+              deleteTodo={this.deleteTodo}
+            />
+          </Grid>
+        </Grid>
         <CreateForm
           createShow={this.state.createShow}
-          createOpen={this.createOpen.bind(this)}
-          createClose={this.createClose.bind(this)}
-          createTodo={this.createTodo.bind(this)}
+          createOpen={this.createOpen}
+          createClose={this.createClose}
+          createTodo={this.createTodo}
         />
       </div>
     );
