@@ -13,7 +13,7 @@
 UI面では，Material UIを用いて，レスポンシブルなデザインのUIを目指した．
 
 ## 開発環境
-react 16.8.6<br>
-react-dom 16.8.6<br>
-react-scripts 2.1.8<br>
-material-ui 3.9.3
+言語: Node.js v8.15.1<br>
+フレームワーク: react 16.8.6(create-react-app 2.1.5)<br>
+UI: material-ui 3.9.3<br>
+<!-- デプロイ: gh-pages 2.0.1 -->
