@@ -1,14 +1,14 @@
 {
-  "main.css": "/ijimaso/frontend_task/tree/master/todo_task/static/css/main.c0b0aa6b.chunk.css",
-  "main.js": "/ijimaso/frontend_task/tree/master/todo_task/static/js/main.7c9ed0d2.chunk.js",
-  "main.js.map": "/ijimaso/frontend_task/tree/master/todo_task/static/js/main.7c9ed0d2.chunk.js.map",
-  "runtime~main.js": "/ijimaso/frontend_task/tree/master/todo_task/static/js/runtime~main.361c53d1.js",
-  "runtime~main.js.map": "/ijimaso/frontend_task/tree/master/todo_task/static/js/runtime~main.361c53d1.js.map",
-  "static/js/2.2c0cfbc3.chunk.js": "/ijimaso/frontend_task/tree/master/todo_task/static/js/2.2c0cfbc3.chunk.js",
-  "static/js/2.2c0cfbc3.chunk.js.map": "/ijimaso/frontend_task/tree/master/todo_task/static/js/2.2c0cfbc3.chunk.js.map",
-  "index.html": "/ijimaso/frontend_task/tree/master/todo_task/index.html",
-  "precache-manifest.a3ac85e4f5da3a0bf899c1a17584fea9.js": "/ijimaso/frontend_task/tree/master/todo_task/precache-manifest.a3ac85e4f5da3a0bf899c1a17584fea9.js",
-  "service-worker.js": "/ijimaso/frontend_task/tree/master/todo_task/service-worker.js",
-  "static/css/main.c0b0aa6b.chunk.css.map": "/ijimaso/frontend_task/tree/master/todo_task/static/css/main.c0b0aa6b.chunk.css.map",
-  "static/media/index.css": "/ijimaso/frontend_task/tree/master/todo_task/static/media/default.55470cfe.jpg"
+  "main.css": "/ijimaso/frontend_task/static/css/main.fd3c4756.chunk.css",
+  "main.js": "/ijimaso/frontend_task/static/js/main.e9192cf7.chunk.js",
+  "main.js.map": "/ijimaso/frontend_task/static/js/main.e9192cf7.chunk.js.map",
+  "runtime~main.js": "/ijimaso/frontend_task/static/js/runtime~main.edb183b0.js",
+  "runtime~main.js.map": "/ijimaso/frontend_task/static/js/runtime~main.edb183b0.js.map",
+  "static/js/2.2c0cfbc3.chunk.js": "/ijimaso/frontend_task/static/js/2.2c0cfbc3.chunk.js",
+  "static/js/2.2c0cfbc3.chunk.js.map": "/ijimaso/frontend_task/static/js/2.2c0cfbc3.chunk.js.map",
+  "index.html": "/ijimaso/frontend_task/index.html",
+  "precache-manifest.33447107a05edf9d9db989311118cf7d.js": "/ijimaso/frontend_task/precache-manifest.33447107a05edf9d9db989311118cf7d.js",
+  "service-worker.js": "/ijimaso/frontend_task/service-worker.js",
+  "static/css/main.fd3c4756.chunk.css.map": "/ijimaso/frontend_task/static/css/main.fd3c4756.chunk.css.map",
+  "static/media/index.css": "/ijimaso/frontend_task/static/media/default.55470cfe.jpg"
 }
