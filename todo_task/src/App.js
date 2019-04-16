@@ -9,25 +9,8 @@ import "./css/App.css";
 export default class App extends Component {
   constructor() {
     super();
-    const undoneTodos = [
-      {
-        id: 1,
-        content: "1限",
-        done: false
-      },
-      {
-        id: 2,
-        content: "2限",
-        done: false
-      },
-    ];
-    const doneTodos = [
-      {
-        id: 3,
-        content: "2限",
-        done: true
-      }
-    ]
+    const undoneTodos = [];
+    const doneTodos = [];
     const undoneLength = undoneTodos.length;
     const doneLength = doneTodos.length;
 
@@ -260,12 +243,14 @@ export default class App extends Component {
    */
   changeBgi = (event) => {
     event.preventDefault();
+
     const clickedId = event.target.id;
     const imageDic =
       [{ name: "default", url: "http://imgcc.naver.jp/kaze/mission/USER/20131024/30/385770/190/1920x1080xa215189de5ef3506289c6c.jpg" },
-      { name: "valley", url: "http://imgcc.naver.jp/kaze/mission/USER/20131023/30/385770/17/1920x1080x70ce8461c60a8e85c08186.jpg" },
-      { name: "cave", url: "http://imgcc.naver.jp/kaze/mission/USER/20131024/30/385770/166/1920x1080x35ad5a010053257c9fca1c.jpg" },
-      { name: "night", url:"http://imgcc.naver.jp/kaze/mission/USER/20131024/30/385770/129/1920x1080xb207116b68e633b49d5098.jpg"}]
+        { name: "valley", url: "http://imgcc.naver.jp/kaze/mission/USER/20131023/30/385770/17/1920x1080x70ce8461c60a8e85c08186.jpg" },
+        { name: "cave", url: "http://imgcc.naver.jp/kaze/mission/USER/20131024/30/385770/166/1920x1080x35ad5a010053257c9fca1c.jpg" },
+        { name: "night", url: "http://imgcc.naver.jp/kaze/mission/USER/20131024/30/385770/129/1920x1080xb207116b68e633b49d5098.jpg" }
+      ];
 
     if (clickedId === "default") {
       document.body.style.backgroundImage = `url(${imageDic[0].url})`;
@@ -281,7 +266,6 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1 id="todotitle">タスク管理アプリ</h1>
         <ListBgi changeBgi={this.changeBgi}/>
         <Grid container>
           <Grid item md={6} xs={12}>

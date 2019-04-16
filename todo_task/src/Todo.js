@@ -14,7 +14,6 @@ const Todo = (props) => {
         <div className="todo">
             <Card>
                 <CardContent>
-                    {/* <h5>{props.id}</h5> */}
                     <p id={todoIdName}>{props.content}</p>
                     <Tooltip title={todoSwitchTooltip}>
                         <Fab color="secondary" aria-label="Check" size="small" id="checkicon"

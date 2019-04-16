@@ -18,7 +18,7 @@ const CreateForm = (props) => {
           <Button variant="contained" color="primary" size="small"
             onClick={(event) => {
               event.preventDefault();
-              props.createTodo(event)
+              props.createTodo(event);
             }}
           >
           OK!!

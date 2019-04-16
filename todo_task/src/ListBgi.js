@@ -1,23 +1,24 @@
 import React from "react";
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import "./css/ListBgi.css";
 
 const ListBgi = (props) => {
     return (
-        <List component="nav">
+        <List className="listbgi">
                 <ListItem button onClick={(event) => { props.changeBgi(event) }} id="default">
-                    デフォルト
+                    Default
                 </ListItem>
                 <ListItem button onClick={(event) => { props.changeBgi(event) }} id="valley">
-                    渓谷
+                    Valley
                 </ListItem>
                 <ListItem button onClick={(event) => { props.changeBgi(event) }} id="cave">
-                    洞窟
+                    Cave
                 </ListItem>
                 <ListItem button onClick={(event) => { props.changeBgi(event) }} id="night">
-                    夜景
+                    Night
                 </ListItem>
-            </List>
+        </List>
     )
 }
 

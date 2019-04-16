@@ -19,7 +19,7 @@ export default class Todolist extends Component {
     render() {
         return (
             <div className="todolist">
-                <List style={{ maxHeight: 350, overflow: "auto" }}>
+                <List style={{ maxHeight: 380, overflow: "auto" }}>
                     {this.arrangeTodo()}
                 </List>
             </div>
