@@ -1,7 +1,8 @@
 # フロントエンド技術課題
 
-## セットアップ方法
-
+## デプロイ方法
+Githubの機能であるGithub Pagesを用いて，アプリをデプロイした．<br>
+具体的には，Github Pagesにデプロイしてくれるnpmパッケージのgh-pagesを用いて，デプロイを行った．
 
 ## 自分で追加した機能
 * 未完了/完了タスクの個数をリアルタイムで表示する機能<br>
@@ -18,4 +19,4 @@ UI面では，Material UIを用いて，レスポンシブルなデザインのU
 言語: Node.js v8.15.1<br>
 フレームワーク: react 16.8.6(create-react-app 2.1.5)<br>
 UI: material-ui 3.9.3<br>
-<!-- デプロイ: gh-pages 2.0.1 -->
+デプロイ: gh-pages 2.0.1
