@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/ijimaso/frontend_task/precache-manifest.33447107a05edf9d9db989311118cf7d.js"
+  "/ijimaso/frontend_task/tree/master/todo_task/precache-manifest.a3ac85e4f5da3a0bf899c1a17584fea9.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/ijimaso/frontend_task/index.html", {
+workbox.routing.registerNavigationRoute("/ijimaso/frontend_task/tree/master/todo_task/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
