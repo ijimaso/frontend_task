@@ -49,7 +49,7 @@ export default class App extends Component {
   plusFirstUndoneTodo = () => {
     const content = document.getElementById("content").value;
     if (content === "") {
-      alert("タスク内容を入力してください．")
+      alert("タスク内容を入力してください．");
     } else {
       const undoneTodos = this.state.undoneTodos.slice();
 
@@ -74,7 +74,7 @@ export default class App extends Component {
   plusMaxUndoneIdTodo = () => {
     const content = document.getElementById("content").value;
     if (content === "") {
-      alert("タスク内容を入力してください．")
+      alert("タスク内容を入力してください．");
     } else {
       const undoneTodos = this.state.undoneTodos.slice();
       const undoneIds = undoneTodos.map(undoneTodo => undoneTodo.id);
@@ -101,7 +101,7 @@ export default class App extends Component {
   plusMaxDoneIdTodo = () => {
     const content = document.getElementById("content").value;
     if (content === "") {
-      alert("タスク内容を入力してください．")
+      alert("タスク内容を入力してください．");
     } else {
     const undoneTodos = this.state.undoneTodos.slice();
     const doneTodos = this.state.doneTodos.slice();
