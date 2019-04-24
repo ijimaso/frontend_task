@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
-import ListBgi from "./ListBgi";
+import NavBgi from "./NavBgi";
 import Undone from "./Undone";
 import Done from "./Done";
 import CreateForm from "./CreateForm";
@@ -235,43 +235,22 @@ export default class App extends Component {
     }
   }
 
-  /**
-   *クリックしたら背景画像が切り替わる
-   *
-   * @memberof App
-   * @param {Object} event イベント
-   */
-  changeBgi = (event) => {
-    event.preventDefault();
-
-    const clickedId = event.target.id;
-    const imageDic =
-      [{ name: "default", url: "http://imgcc.naver.jp/kaze/mission/USER/20131024/30/385770/190/1920x1080xa215189de5ef3506289c6c.jpg" },
-        { name: "valley", url: "http://imgcc.naver.jp/kaze/mission/USER/20131023/30/385770/17/1920x1080x70ce8461c60a8e85c08186.jpg" },
-        { name: "cave", url: "http://imgcc.naver.jp/kaze/mission/USER/20131024/30/385770/166/1920x1080x35ad5a010053257c9fca1c.jpg" },
-        { name: "night", url: "http://imgcc.naver.jp/kaze/mission/USER/20131024/30/385770/129/1920x1080xb207116b68e633b49d5098.jpg" }
-      ];
-
-    if (clickedId === "default") {
-      document.body.style.backgroundImage = `url(${imageDic[0].url})`;
-    } else if (clickedId === "valley") {
-      document.body.style.backgroundImage = `url(${imageDic[1].url})`;
-    } else if (clickedId === "cave") {
-      document.body.style.backgroundImage = `url(${imageDic[2].url})`;
-    } else if (clickedId === "night") {
-      document.body.style.backgroundImage = `url(${imageDic[3].url})`;
-    }
-  }
-
   render() {
+    const {
+      undoneTodos,
+      undoneLength,
+      doneTodos,
+      doneLength,
+      createShow
+    } = this.state
     return (
       <div className="App">
-        <ListBgi changeBgi={this.changeBgi}/>
+        <NavBgi />
         <Grid container>
           <Grid item md={6} xs={12}>
             <Undone
-              undoneTodos={this.state.undoneTodos}
-              undoneLength={this.state.undoneLength}
+              undoneTodos={undoneTodos}
+              undoneLength={undoneLength}
               createOpen={this.createOpen}
               switchDone={this.switchDone}
               deleteTodo={this.deleteTodo}
@@ -279,15 +258,15 @@ export default class App extends Component {
           </Grid>
           <Grid item md={6} xs={12}>
             <Done
-              doneTodos={this.state.doneTodos}
-              doneLength={this.state.doneLength}
+              doneTodos={doneTodos}
+              doneLength={doneLength}
               switchDone={this.switchDone}
               deleteTodo={this.deleteTodo}
             />
           </Grid>
         </Grid>
         <CreateForm
-          createShow={this.state.createShow}
+          createShow={createShow}
           createOpen={this.createOpen}
           createClose={this.createClose}
           createTodo={this.createTodo}
