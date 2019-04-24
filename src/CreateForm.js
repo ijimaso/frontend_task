@@ -4,9 +4,10 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
 const CreateForm = (props) => {
+  const {createShow,createClose,createTodo} = props
     return (
       <div>
-        <Dialog open={props.createShow} onClose={props.createClose}>
+        <Dialog open={createShow} onClose={createClose}>
           <h1>作成するタスクを入力してください．</h1>
           <TextField
             multiline
@@ -18,7 +19,7 @@ const CreateForm = (props) => {
           <Button variant="contained" color="primary" size="small"
             onClick={(event) => {
               event.preventDefault();
-              props.createTodo(event);
+              createTodo(event);
             }}
           >
           OK!!
