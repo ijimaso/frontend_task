@@ -1,14 +1,14 @@
 {
-  "main.css": "/frontend_task/static/css/main.e6f2eb8d.chunk.css",
-  "main.js": "/frontend_task/static/js/main.97e1a351.chunk.js",
-  "main.js.map": "/frontend_task/static/js/main.97e1a351.chunk.js.map",
-  "runtime~main.js": "/frontend_task/static/js/runtime~main.073f97b2.js",
-  "runtime~main.js.map": "/frontend_task/static/js/runtime~main.073f97b2.js.map",
-  "static/js/2.32000e85.chunk.js": "/frontend_task/static/js/2.32000e85.chunk.js",
-  "static/js/2.32000e85.chunk.js.map": "/frontend_task/static/js/2.32000e85.chunk.js.map",
-  "index.html": "/frontend_task/index.html",
-  "precache-manifest.ba77fa5d27da408c6d76aff979655be7.js": "/frontend_task/precache-manifest.ba77fa5d27da408c6d76aff979655be7.js",
-  "service-worker.js": "/frontend_task/service-worker.js",
-  "static/css/main.e6f2eb8d.chunk.css.map": "/frontend_task/static/css/main.e6f2eb8d.chunk.css.map",
-  "static/media/index.css": "/frontend_task/static/media/default.55470cfe.jpg"
+  "main.css": "/ijimaso/Task_App/static/css/main.8aa7893d.chunk.css",
+  "main.js": "/ijimaso/Task_App/static/js/main.bed159cb.chunk.js",
+  "main.js.map": "/ijimaso/Task_App/static/js/main.bed159cb.chunk.js.map",
+  "runtime~main.js": "/ijimaso/Task_App/static/js/runtime~main.947721ce.js",
+  "runtime~main.js.map": "/ijimaso/Task_App/static/js/runtime~main.947721ce.js.map",
+  "static/js/2.32000e85.chunk.js": "/ijimaso/Task_App/static/js/2.32000e85.chunk.js",
+  "static/js/2.32000e85.chunk.js.map": "/ijimaso/Task_App/static/js/2.32000e85.chunk.js.map",
+  "index.html": "/ijimaso/Task_App/index.html",
+  "precache-manifest.9c38422831975400f7c290b255390a38.js": "/ijimaso/Task_App/precache-manifest.9c38422831975400f7c290b255390a38.js",
+  "service-worker.js": "/ijimaso/Task_App/service-worker.js",
+  "static/css/main.8aa7893d.chunk.css.map": "/ijimaso/Task_App/static/css/main.8aa7893d.chunk.css.map",
+  "static/media/index.css": "/ijimaso/Task_App/static/media/default.55470cfe.jpg"
 }
