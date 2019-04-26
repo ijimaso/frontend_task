@@ -2,7 +2,7 @@
   "name": "todo_task",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/ijimaso/Task_App",
+  "homepage": "https://ijimaso.github.io/Task_App/",
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "^3.0.2",
