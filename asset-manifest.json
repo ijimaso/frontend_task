@@ -1,14 +1,14 @@
 {
-  "main.css": "/ijimaso/Task_App/static/css/main.8aa7893d.chunk.css",
-  "main.js": "/ijimaso/Task_App/static/js/main.bed159cb.chunk.js",
-  "main.js.map": "/ijimaso/Task_App/static/js/main.bed159cb.chunk.js.map",
-  "runtime~main.js": "/ijimaso/Task_App/static/js/runtime~main.947721ce.js",
-  "runtime~main.js.map": "/ijimaso/Task_App/static/js/runtime~main.947721ce.js.map",
-  "static/js/2.32000e85.chunk.js": "/ijimaso/Task_App/static/js/2.32000e85.chunk.js",
-  "static/js/2.32000e85.chunk.js.map": "/ijimaso/Task_App/static/js/2.32000e85.chunk.js.map",
-  "index.html": "/ijimaso/Task_App/index.html",
-  "precache-manifest.9c38422831975400f7c290b255390a38.js": "/ijimaso/Task_App/precache-manifest.9c38422831975400f7c290b255390a38.js",
-  "service-worker.js": "/ijimaso/Task_App/service-worker.js",
-  "static/css/main.8aa7893d.chunk.css.map": "/ijimaso/Task_App/static/css/main.8aa7893d.chunk.css.map",
-  "static/media/index.css": "/ijimaso/Task_App/static/media/default.55470cfe.jpg"
+  "main.css": "/Task_App/static/css/main.06620409.chunk.css",
+  "main.js": "/Task_App/static/js/main.d5466110.chunk.js",
+  "main.js.map": "/Task_App/static/js/main.d5466110.chunk.js.map",
+  "runtime~main.js": "/Task_App/static/js/runtime~main.8c884a32.js",
+  "runtime~main.js.map": "/Task_App/static/js/runtime~main.8c884a32.js.map",
+  "static/js/2.32000e85.chunk.js": "/Task_App/static/js/2.32000e85.chunk.js",
+  "static/js/2.32000e85.chunk.js.map": "/Task_App/static/js/2.32000e85.chunk.js.map",
+  "index.html": "/Task_App/index.html",
+  "precache-manifest.dd93b93934cd033fdacfff8ea1379986.js": "/Task_App/precache-manifest.dd93b93934cd033fdacfff8ea1379986.js",
+  "service-worker.js": "/Task_App/service-worker.js",
+  "static/css/main.06620409.chunk.css.map": "/Task_App/static/css/main.06620409.chunk.css.map",
+  "static/media/index.css": "/Task_App/static/media/default.55470cfe.jpg"
 }
