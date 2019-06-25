@@ -140,16 +140,12 @@ export default class App extends Component {
     const doneIds = doneTodos.map(doneTodo => doneTodo.id);
     const maxDoneId = Math.max(...doneIds);
 
-    if ((undoneLength !== 0 && doneLength !== 0) && (maxUndoneId > maxDoneId)) {
+    if (maxUndoneId > maxDoneId) {
       this.plusMaxUndoneIdTodo();
-    } else if ((undoneLength !== 0 && doneLength !== 0) && (maxUndoneId < maxDoneId)) {
+    } else if (maxUndoneId < maxDoneId) {
       this.plusMaxDoneIdTodo();
     } else if (doneLength === 0 && undoneLength === 0) {
       this.plusFirstUndoneTodo();
-    } else if (doneLength === 0) {
-      this.plusMaxUndoneIdTodo();
-    } else if (undoneLength === 0) {
-      this.plusMaxDoneIdTodo();
     }
   }
 
